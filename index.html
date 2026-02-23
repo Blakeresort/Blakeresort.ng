@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blake Resort | Restaurant, Live Music Lounge & Bistro - Garki Abuja</title>
+    <meta name="description" content="Blake Resort - Premium Restaurant, Live Music Lounge & Bistro in Garki, Abuja. Open 24 hours. Fine dining, entertainment, and events.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        blake: {
+                            navy: '#0a1628',
+                            gold: '#d4af37',
+                            red: '#dc2626',
+                            cream: '#f5f5dc',
+                            dark: '#1a1a2e'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateX(10px);
+            color: #d4af37;
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(26,26,46,0.8) 50%, rgba(10,22,40,0.95) 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e5c2 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .image-reveal {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            transition: clip-path 0.6s ease;
+        }
+        .image-reveal:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-blake-navy text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="/mnt/kimi/upload/blake-logo_page-0001.jpg" alt="Blake Resort" class="h-12 w-auto rounded-lg shadow-lg">
+                    <div class="hidden md:block">
+                        <h1 class="font-serif text-2xl font-bold tracking-wider">BLAKE</h1>
+                        <p class="text-xs text-blake-gold tracking-widest uppercase">Resort</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-sm uppercase tracking-widest hover:text-blake-gold transition-colors">Home</a>
+                    <a href="#services" class="nav-link text-sm uppercase tracking-widest hover:text-blake-gold transition-colors">Services</a>
+                    <a href="#menu" class="nav-link text-sm uppercase tracking-widest hover:text-blake-gold transition-colors">Menu</a>
+                    <a href="#about" class="nav-link text-sm uppercase tracking-widest hover:text-blake-gold transition-colors">About</a>
+                    <a href="#contact" class="nav-link text-sm uppercase tracking-widest hover:text-blake-gold transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/2349168800003" target="_blank" class="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition-all transform hover:scale-110 shadow-lg">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="tel:+2349168800003" class="hidden sm:block bg-blake-gold hover:bg-yellow-600 text-blake-navy font-bold px-6 py-3 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                        Call Now
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blake-navy/95 backdrop-blur-lg absolute w-full border-t border-white/10">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block py-3 text-center hover:text-blake-gold transition-colors">Home</a>
+                <a href="#services" class="block py-3 text-center hover:text-blake-gold transition-colors">Services</a>
+                <a href="#menu" class="block py-3 text-center hover:text-blake-gold transition-colors">Menu</a>
+                <a href="#about" class="block py-3 text-center hover:text-blake-gold transition-colors">About</a>
+                <a href="#contact" class="block py-3 text-center hover:text-blake-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="/mnt/kimi/upload/cute.jpg" alt="Blake Resort Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-blake-gold/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-blake-red/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in-up">
+                <div class="inline-block mb-4 px-4 py-2 border border-blake-gold/50 rounded-full text-blake-gold text-sm uppercase tracking-widest bg-blake-gold/10 backdrop-blur-sm">
+                    <i class="fas fa-clock mr-2"></i> Open 24 Hours
+                </div>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                    <span class="block text-white">Experience</span>
+                    <span class="gold-gradient italic">Luxury Dining</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+                    Abuja's premier destination for exquisite cuisine, live entertainment, and unforgettable moments in the heart of Garki.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#menu" class="bg-blake-gold text-blake-navy font-bold px-8 py-4 rounded-full text-lg hover:bg-white transition-all transform hover:scale-105 shadow-2xl">
+                        View Our Menu
+                    </a>
+                    <a href="https://wa.me/2349168800003" target="_blank" class="glass-effect text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-green-400"></i>
+                        WhatsApp Reservation
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Info Cards -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="glass-effect p-6 rounded-2xl text-center hover:bg-white/10 transition-all cursor-pointer group">
+                    <i class="fas fa-utensils text-3xl text-blake-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-serif text-lg font-bold">Fine Dining</h3>
+                    <p class="text-sm text-gray-400">Exquisite local & international cuisine</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl text-center hover:bg-white/10 transition-all cursor-pointer group">
+                    <i class="fas fa-music text-3xl text-blake-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-serif text-lg font-bold">Live Music</h3>
+                    <p class="text-sm text-gray-400">Premium lounge entertainment</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl text-center hover:bg-white/10 transition-all cursor-pointer group">
+                    <i class="fas fa-glass-cheers text-3xl text-blake-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-serif text-lg font-bold">Events</h3>
+                    <p class="text-sm text-gray-400">Corporate & private celebrations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-blake-gold"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-blake-dark relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blake-gold to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blake-gold uppercase tracking-widest text-sm font-semibold">What We Offer</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-blake-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Restaurant Service -->
+                <div class="service-card group relative overflow-hidden rounded-2xl bg-blake-navy border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/mnt/kimi/upload/unnamed (5).jpg" alt="Restaurant Menu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blake-gold/20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-utensils text-2xl text-blake-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Restaurant & Bistro</h3>
+                        <p class="text-gray-400 mb-4">Savor our diverse menu featuring Nigerian specialties, continental dishes, and signature platters. From our famous "I Love 9ja" platter to international favorites.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> 24-hour service</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Native & continental dishes</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Family-friendly dining</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Live Music Lounge -->
+                <div class="service-card group relative overflow-hidden rounded-2xl bg-blake-navy border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/mnt/kimi/upload/ser.jpeg" alt="Live Music Lounge" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blake-gold/20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-music text-2xl text-blake-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Live Music Lounge</h3>
+                        <p class="text-gray-400 mb-4">Experience Abuja's vibrant nightlife in our premium lounge featuring live bands, DJ performances, and a sophisticated atmosphere.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Live band performances</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Premium sound system</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> VIP seating available</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Events & Conferences -->
+                <div class="service-card group relative overflow-hidden rounded-2xl bg-blake-navy border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/mnt/kimi/upload/WhatsApp-Image-2022-07-22-at-5.43.32-PM-1.jpg" alt="Event Hall" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blake-gold/20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-calendar-alt text-2xl text-blake-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Events & Conferences</h3>
+                        <p class="text-gray-400 mb-4">Host your corporate events, weddings, and private parties in our elegant banquet halls equipped with modern amenities.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Spacious banquet halls</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Conference facilities</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Custom catering</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Outdoor Dining -->
+                <div class="service-card group relative overflow-hidden rounded-2xl bg-blake-navy border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/mnt/kimi/upload/AcnlKN2DOlhXTkA7KG3ruHWLPJ_-psy8CJ2pv7QqYZK85mYkoQweV1homs0geBSGMFGSU_qx8YMaHCGdibG8IxE_yENeGylzneTLCy-Xfn...1bMFKtT5ANefY-PKb7_Q8GZng7hO1HdZzV1xwA-AjfXl2vxf2qiMZxa_4Uy-NNKF_nc1V8Q2i7_4bK8A4USqlf5kqhPF0cVJDTRobdLyd_HADAGHqu0wsbJVc.jpeg" alt="Outdoor Seating" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blake-gold/20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-tree text-2xl text-blake-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Garden Terrace</h3>
+                        <p class="text-gray-400 mb-4">Enjoy al fresco dining in our beautifully landscaped outdoor terrace, perfect for romantic dinners and casual gatherings.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Serene environment</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Natural ambiance</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Outdoor bar service</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bar & Drinks -->
+                <div class="service-card group relative overflow-hidden rounded-2xl bg-blake-navy border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/mnt/kimi/upload/unnamed (2).jpg" alt="Bar Menu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blake-gold/20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-cocktail text-2xl text-blake-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Premium Bar</h3>
+                        <p class="text-gray-400 mb-4">Extensive selection of wines, spirits, cocktails, and mocktails. Our skilled bartenders craft the perfect drink for every occasion.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Signature cocktails</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Premium wines & spirits</li>
+                            <li><i class="fas fa-check text-blake-gold mr-2"></i> Mocktail selection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Private Dining -->
+                <div class="service-card group relative overflow-hidden rounded-2xl bg-blake-navy border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/mnt/kimi/upload/cute.jpg" alt="Private Dining" class="w-full h-full object-cover transition-transform duration-500 gr
